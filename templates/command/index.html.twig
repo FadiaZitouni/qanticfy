@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandController!{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-light " style="background-color: #fff;">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('assets/images/quanticfy.jpeg') }}" width="100" height="100" class="d-inline-block align-top" alt="">
+                </a>
+                <span style="font-size:80px; margin: 40px;text-align: center;font-weight: bold;color: dodgerblue"> Test web backend developer</span>
+
+            </nav>
+            <div class="card"  >
+                <div class="card-body">
+                    <h5 class="card-title">Présentation</h5>
+                    <div class="row col-md-12" >
+                        <!-- Grid column -->
+                        <div class="col-md-6 " style="text-align: right;color:dodgerblue ">
+                            <!-- Content -->
+                            <p   >
+                                Propriétaire
+                            </p>
+                            <p   >
+                                Condidature
+                            </p>
+                            <p   >
+                                Auteur
+                            </p>
+                            <p  >
+                                Doc Release
+                            </p>
+                            <p  >
+                                Date
+                            </p>
+                            <p  >
+                                Usage
+                            </p>
+
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-6">
+                            <!-- Links -->
+
+                            <p>
+                                Société THE QUANTIC FACTORY x SHOPY SCIENCE
+                            </p>
+                            <p>
+                                Fadia Zitouni
+                            </p>
+                            <p>
+                                Morgan Caron
+                            </p>
+                            <p>
+                                v1.2
+                            </p>
+                            <p>
+                                03/03/2023
+                            </p>
+                            <p>
+                                test technique recrutement développeur backend web
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                    </div>
+                    <a href="#" class="card-link">Doc link</a>
+                </div>
+            </div>
+            <div class="col-md-12 bg-light">
+                <div class="form-group">
+                    <a href="{{ path('project_show') }}" class="btn btn-primary"  style="float: right;margin: 10px" role="button" aria-pressed="true">Get Orders CSV</a>
+                </div>
+                <table class="table table-striped">
+                    <caption>List of Oders Lines</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Order</th>
+                        <th scope="col">Delivery Name</th>
+                        <th scope="col">Delivery Address</th>
+                        <th scope="col">Delivery Country</th>
+                        <th scope="col">Delivery Zipcode</th>
+                        <th scope="col">Delivery City</th>
+                        <th scope="col">Items Count</th>
+                        <th scope="col">Item Index</th>
+                        <th scope="col">Item Id</th>
+                        <th scope="col">Item Quantity</th>
+                        <th scope="col">Line Price Excl. VAT</th>
+                        <th scope="col">line Price Incl. VAT</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for fields in data %}
+                        <tr>
+                            {% for field in fields %}
+                                <td scope="row">  {{ field }}</td>
+                            {% endfor %}
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="form-group">
+                <a href="{{ path('project_show') }}" class="btn btn-primary"  style="float: right;margin: 10px" role="button" aria-pressed="true">Get Orders CSV</a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
